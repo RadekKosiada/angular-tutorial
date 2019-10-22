@@ -13,6 +13,7 @@
         <h2>Todo</h2>
         <div ng-controller="TodoListController as todoList">
             <span>{{ todoList.remaining() }} of {{todoList.todos.length}} remaining</span>
+            <button ng-click="todoList.archive()">Archive</button>
             <ul>
                 <li ng-repeat="todo in todoList.todos">
                     <input type="checkbox" ng-model="todo.done">
@@ -25,6 +26,7 @@
                 <input class="" type="submit" value="Add">
 
             </form>
+
         </div>
     </div>
 </body>

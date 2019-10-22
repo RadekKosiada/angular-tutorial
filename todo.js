@@ -7,6 +7,7 @@ angular.module('todoApp', [])
         todoList.todos = [
             { text: 'learn AngularJS', done: false },
         ];
+        todoList.archived = [];
         /* method addTodo */
         todoList.addTodo = function() {
             todoList.todos.push({ text: todoList.todoText, done: false });
@@ -27,9 +28,7 @@ angular.module('todoApp', [])
             var oldTodos = todoList.todos;
             todoList.todos = [];
             angular.forEach(oldTodos, function(todo) {
-                if (!todo.done) {
-                    todoList.todos.push(todo);
-                }
+                if (!todo.done) todoList.todos.push(todo);
             });
         };
 
